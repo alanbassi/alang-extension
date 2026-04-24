@@ -1,0 +1,216 @@
+.alang-inline {
+  position: relative;
+  --alang-translation-color: #19b22a;
+  --alang-highlight-color: rgba(255, 236, 128, 0.62);
+  ruby-position: over;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  line-height: inherit;
+  font: inherit;
+  color: inherit !important;
+  overflow: visible;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+html.alang-active p,
+html.alang-active p *,
+html.alang-active li,
+html.alang-active li *,
+html.alang-active blockquote,
+html.alang-active blockquote *,
+html.alang-active article,
+html.alang-active article *,
+html.alang-active section,
+html.alang-active section *,
+html.alang-active h1,
+html.alang-active h1 *,
+html.alang-active h2,
+html.alang-active h2 *,
+html.alang-active h3,
+html.alang-active h3 *,
+html.alang-active h4,
+html.alang-active h4 *,
+html.alang-active h5,
+html.alang-active h5 *,
+html.alang-active h6,
+html.alang-active h6 *,
+html.alang-active td,
+html.alang-active td *,
+html.alang-active th,
+html.alang-active th *,
+html.alang-active figcaption,
+html.alang-active figcaption *,
+html.alang-active cite,
+html.alang-active cite * {
+  cursor: pointer;
+}
+
+html.alang-active button,
+html.alang-active input,
+html.alang-active textarea,
+html.alang-active select,
+html.alang-active summary,
+html.alang-active audio,
+html.alang-active video,
+html.alang-active [role="button"] {
+  cursor: auto;
+}
+
+.alang-inline.is-complex-selection {
+  display: inline;
+}
+
+.alang-inline.is-single-word,
+.alang-inline.is-single-word .alang-inline-text {
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+.alang-inline-translation {
+  display: ruby-text;
+  max-width: 22ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: "Avenir Next", "SF Pro Text", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-size: 0.76em;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.08;
+  letter-spacing: 0.01em;
+  color: var(--alang-translation-color);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.28);
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.alang-inline.is-complex-selection .alang-inline-translation.is-floating {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 0.15em);
+  z-index: 2147483646;
+  display: block;
+  max-width: min(320px, 80vw);
+  white-space: normal;
+  pointer-events: none;
+}
+
+.alang-inline-text {
+  display: inline;
+  color: inherit !important;
+  text-decoration: none;
+  background: linear-gradient(
+    transparent 14%,
+    var(--alang-highlight-color) 14%,
+    var(--alang-highlight-color) 86%,
+    transparent 86%
+  );
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  border-radius: 0.08em;
+  padding: 0 0.06em;
+}
+
+.alang-inline.is-complex-selection .alang-inline-text {
+  text-decoration: none;
+  background: linear-gradient(
+    transparent 14%,
+    var(--alang-highlight-color) 14%,
+    var(--alang-highlight-color) 86%,
+    transparent 86%
+  );
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.alang-inline.is-complex-selection .alang-inline-text a {
+  color: inherit;
+}
+
+.alang-inline-actions {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 1.45em);
+  z-index: 2147483647;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transform: translateX(-50%);
+  transition: opacity 120ms ease;
+  background: rgba(244, 247, 251, 0.82);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 4px 6px;
+  width: max-content;
+  max-width: min(340px, 92vw);
+  overflow: hidden;
+}
+
+.alang-inline.is-current .alang-inline-actions {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.alang-inline.is-complex-selection .alang-inline-actions {
+  left: 0;
+  bottom: calc(100% + 1.95em);
+  transform: none;
+}
+
+.alang-inline-actions button {
+  appearance: none;
+  border: none;
+  border-radius: 999px;
+  min-width: 26px;
+  min-height: 26px;
+  padding: 3px 6px;
+  font-family: "Avenir Next", "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  background: transparent;
+  color: #1f2937;
+  white-space: nowrap;
+}
+
+.alang-inline-actions button:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.alang-inline-actions button:disabled {
+  opacity: 0.68;
+  cursor: progress;
+}
+
+.alang-inline-actions .ghost {
+  padding-inline: 6px;
+  background: rgba(255, 255, 255, 0.62);
+  color: #1f2937;
+}
+
+.alang-inline-actions .danger {
+  padding-inline: 6px;
+  background: rgba(255, 243, 243, 0.7);
+  color: #b42318;
+}
+
+.alang-inline.is-loading .alang-inline-translation {
+  color: var(--alang-translation-color);
+}
+
+.alang-inline.is-error .alang-inline-translation {
+  color: #d54e4e;
+}

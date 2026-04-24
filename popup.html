@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ALang Extension</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="popup-shell">
+      <header class="hero">
+        <div class="brand-lockup">
+          <img class="brand-logo" src="assets/source/alang-extension-logo.png" alt="ALang Extension">
+        </div>
+        <h1>Your reading vocabulary</h1>
+        <p class="hero-copy">Select words on any page, translate instantly, and review later.</p>
+        <div class="hero-stats">
+          <div>
+            <strong id="entry-count">0</strong>
+            <span>saved items</span>
+          </div>
+          <div>
+            <strong id="lang-pair">en -> es</strong>
+            <span>languages</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="activation-card">
+        <div>
+          <p class="activation-label">Status on this tab</p>
+          <strong id="activation-state">Off</strong>
+          <p id="activation-copy" class="activation-copy">Enable ALang Extension only when you want to use it on this tab.</p>
+        </div>
+        <button id="toggle-active" type="button">Enable on this tab</button>
+      </section>
+
+      <section class="language-card">
+        <label>
+          <span>Source</span>
+          <select id="source-lang"></select>
+        </label>
+        <label>
+          <span>Target</span>
+          <select id="target-lang"></select>
+        </label>
+        <fieldset class="color-field">
+          <legend>Translation color</legend>
+          <div id="translation-color-options" class="color-options"></div>
+        </fieldset>
+        <fieldset class="color-field">
+          <legend>Highlight color</legend>
+          <div id="highlight-color-options" class="color-options is-compact"></div>
+        </fieldset>
+
+        <p class="translation-note">
+          When ALang Extension is enabled, some page elements such as bold text and links may be simplified to make selection and translation easier.
+        </p>
+      </section>
+
+      <section class="toolbar">
+        <input id="search-input" type="search" placeholder="Search word, translation, or page">
+        <button id="open-options" type="button" class="ghost">Options</button>
+      </section>
+
+      <section id="entry-list" class="entry-list" aria-live="polite"></section>
+
+      <footer class="footer-actions">
+        <button id="export-json" type="button">Export JSON</button>
+        <button id="export-csv" type="button">Export CSV</button>
+        <button id="clear-all" type="button" class="danger">Clear</button>
+      </footer>
+    </main>
+
+    <template id="entry-template">
+      <article class="entry-card">
+        <div class="entry-head">
+          <div>
+            <h2 class="entry-text"></h2>
+            <p class="entry-translation"></p>
+          </div>
+          <button type="button" class="entry-delete ghost">Delete</button>
+        </div>
+        <p class="entry-context"></p>
+        <a class="entry-link" target="_blank" rel="noreferrer noopener"></a>
+        <p class="entry-date"></p>
+      </article>
+    </template>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

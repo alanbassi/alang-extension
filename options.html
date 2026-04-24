@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ALang Extension • Options</title>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main class="page">
+      <section class="panel">
+        <div class="brand-lockup">
+          <img class="brand-logo" src="assets/source/alang-extension-logo.png" alt="ALang Extension">
+        </div>
+        <h1>Settings</h1>
+        <p class="lead">Adjust translation languages and audio for your reading workflow.</p>
+
+        <form id="settings-form" class="form">
+          <label>
+            <span>Source language</span>
+            <select name="sourceLang"></select>
+          </label>
+
+          <label>
+            <span>Target language</span>
+            <select name="targetLang"></select>
+          </label>
+
+          <label>
+            <span>Audio voice</span>
+            <select name="speechVoiceName">
+              <option value="">Automatic</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Automatic voice source</span>
+            <select name="speechVoiceSource">
+              <option value="any">Most natural available</option>
+              <option value="system">Operating system</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Voice speed</span>
+            <input name="speechRate" type="number" min="0.65" max="1.2" step="0.05" value="0.9">
+          </label>
+
+          <label>
+            <span>Voice pitch</span>
+            <input name="speechPitch" type="number" min="0.8" max="1.2" step="0.05" value="1">
+          </label>
+
+          <div class="actions">
+            <button type="submit">Save settings</button>
+            <p id="status" class="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="options.js"></script>
+  </body>
+</html>

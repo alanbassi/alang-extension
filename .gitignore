@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+
+# Credentials & keys
+*.pem
+*.key
+*.p12
+*.pfx
+*.cer
+*.crt
+service-account*.json
+*-credentials.json
+
+# Build output
+dist/
+build/
+out/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Temp
+*.tmp
+*.temp
