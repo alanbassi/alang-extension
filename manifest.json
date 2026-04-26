@@ -9,7 +9,7 @@
     "48": "assets/icons/icon-48.png",
     "128": "assets/icons/icon-128.png"
   },
-  "permissions": ["storage", "contextMenus", "activeTab"],
+  "permissions": ["storage", "contextMenus", "activeTab", "scripting"],
   "host_permissions": [
     "https://translate.googleapis.com/*"
   ],
@@ -24,13 +24,5 @@
     "default_title": "ALang Extension",
     "default_popup": "popup.html"
   },
-  "options_page": "options.html",
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"],
-      "css": ["content.css"],
-      "run_at": "document_idle"
-    }
-  ]
+  "options_page": "options.html"
 }

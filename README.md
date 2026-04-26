@@ -123,6 +123,13 @@ After editing extension files:
 |   |   |-- icon-48.png
 |   |   |-- icon-128.png
 |   |   `-- icon-256.png
+|   |-- promotional/
+|   |   |-- marquee-promo-tile-1400x560.png
+|   |   `-- small-promo-tile-440x280.png
+|   |-- screenshots/
+|   |   |-- article-inline-translation-screenshot-1280x800.png
+|   |   |-- inline-translation-screenshot-1280x800.png
+|   |   `-- popup-settings-screenshot-1280x800.png
 |   `-- source/
 |       |-- alang-extension-icon-master.png
 |       |-- alang-extension-logo.png
@@ -138,6 +145,8 @@ After editing extension files:
 |-- popup.html
 `-- popup.js
 ```
+
+Chrome Web Store packages are generated as zip artifacts and are not committed.
 
 ## Supported Languages
 

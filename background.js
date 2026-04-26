@@ -142,6 +142,15 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
         const nextActive = !(await isTabEnabled(tabId));
         await setTabEnabled(tabId, nextActive);
+        if (nextActive) {
+          try {
+            await injectContentScript(tabId);
+          } catch (error) {
+            await setTabEnabled(tabId, false);
+            throw error;
+          }
+        }
+
         await notifyTabActiveState(tabId, nextActive);
         sendResponse({ ok: true, active: nextActive });
       })
@@ -369,6 +378,18 @@ async function removeTabEnabled(tabId) {
 
   delete map[String(tabId)];
   await chrome.storage.session.set({ [SESSION_KEYS.enabledTabs]: map });
+}
+
+async function injectContentScript(tabId) {
+  await chrome.scripting.insertCSS({
+    target: { tabId },
+    files: ["content.css"]
+  });
+
+  await chrome.scripting.executeScript({
+    target: { tabId },
+    files: ["content.js"]
+  });
 }
 
 async function notifyTabActiveState(tabId, active) {

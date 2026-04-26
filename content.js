@@ -1,4 +1,10 @@
 (function () {
+  if (window.__alangExtensionContentLoaded) {
+    return;
+  }
+
+  window.__alangExtensionContentLoaded = true;
+
   const INLINE_SELECTOR = ".alang-inline";
   const FLATTENABLE_INLINE_SELECTOR = "a, b, strong, em, i, u, mark, small, sup, sub";
   const LETTER_PATTERN = /[\p{L}\p{M}]/u;

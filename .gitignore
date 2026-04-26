@@ -24,6 +24,8 @@ service-account*.json
 dist/
 build/
 out/
+_chrome_webstore_package/
+*.zip
 
 # OS
 .DS_Store

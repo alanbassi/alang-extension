@@ -154,12 +154,6 @@ function bindEvents() {
     state.tabActive = Boolean(response.active);
     renderActivationState();
 
-    if (state.tabActive) {
-      await chrome.tabs.reload(state.activeTabId);
-      window.close();
-      return;
-    }
-
     await syncActiveTabUi();
   });
 }
