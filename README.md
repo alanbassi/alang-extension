@@ -6,7 +6,9 @@
 
 ### Read web pages in multiple languages, translate in context, listen to pronunciation, and save vocabulary.
 
-[![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-4285F4?logo=googlechrome&logoColor=white)](https://developer.chrome.com/docs/extensions/)
+## [Install from the Chrome Web Store](https://chromewebstore.google.com/detail/alang-extension/idajhfabglooghebfhadjldklgejikog)
+
+[![Chrome Web Store](https://img.shields.io/badge/Chrome-Web%20Store-4285F4?logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/alang-extension/idajhfabglooghebfhadjldklgejikog)
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-34A853?logo=googlechrome&logoColor=white)](https://developer.chrome.com/docs/extensions/develop/migrate/what-is-mv3)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES2020-F7DF1E?logo=javascript&logoColor=111)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Version](https://img.shields.io/badge/version-1.0.0-0F766E)](./manifest.json)
